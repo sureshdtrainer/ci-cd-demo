@@ -1,0 +1,19 @@
+name: Basic CI/CD Workflow
+
+on: push
+
+jobs:
+  echo-hello:
+    runs-on: ubuntu-latest
+    steps:
+      -name: Echo hello
+       run: echo "Hello, World!"
+  echo-goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      -name: Failed steps
+       run:|
+        echo "It will be success!"
+        exit 0
+      -name: Echo goodbye
+       run: echo "Goodbye, World!"
